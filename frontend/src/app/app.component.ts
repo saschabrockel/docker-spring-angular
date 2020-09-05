@@ -1,10 +1,16 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = 'docker-spring-angular';
+  constructor(public translate: TranslateService) {
+    translate.setDefaultLang("de");
+    if (localStorage.getItem("language")) {
+      translate.use(localStorage.getItem("language"));
+    }
+  }
 }

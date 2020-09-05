@@ -1,9 +1,20 @@
 <mat-toolbar color="primary" style="height:67px;">
-  <a mat-button disableRipple="true" style="color: white; font-size: larger; text-decoration: none;">
+  <a mat-button disableRipple="true" style="color: white; font-size: larger; text-decoration: none;" routerLink="/">
     <span>Docker with Angular & Spring Boot</span>
   </a>
 
+  <button mat-raised-button [routerLink]="['/users']">Users</button>
+
   <span class="toolbar-spacer"></span>
+
+  <!-- Language change menu -->
+  <button mat-icon-button [matMenuTriggerFor]="menu" disableRipple="true">
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu" style="font-size: medium;">
+    <button mat-menu-item (click)="useLanguage('de')">Deutsch</button>
+    <button mat-menu-item (click)="useLanguage('en')">English</button>
+  </mat-menu>
   <p>Welcome!</p>
 
 </mat-toolbar>

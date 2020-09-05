@@ -1,0 +1,36 @@
+<p>user works!</p>
+
+<div class="mat-elevation-z8">
+
+    <table mat-table matSort [dataSource]="dataSource" multiTemplateDataRows>
+        <!-- <table mat-table matSort [dataSource]="dataSource" multiTemplateDataRows
+        *ngIf="dataInitialized && this.dataSource.data.length > 0"> -->
+
+        <!-- Username Column -->
+        <ng-container matColumnDef="username">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>
+                {{ 'USER.NAME' | translate }}
+            </th>
+            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>
+                {{ 'USER.EMAIL' | translate }}</th>
+            <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+        </ng-container>
+
+        <!-- Date of Creation Column -->
+        <ng-container matColumnDef="lastUpdated">
+            <th mat-header-cell mat-sort-header *matHeaderCellDef>
+                {{ 'USER.DATE_OF_CREATION' | translate }}</th>
+            <td mat-cell *matCellDef="let element">
+                {{ element.lastUpdated | date: 'medium' : '' : translate.currentLang }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
