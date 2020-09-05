@@ -7,7 +7,7 @@ import { HeaderComponent } from "./header/header.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AppMaterialModule } from "./app-material.module";
 import { UserComponent } from "./user/user.component";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
 import {
   TranslateModule,
   TranslateLoader,
@@ -19,6 +19,7 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
   declarations: [AppComponent, HeaderComponent, UserComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AppMaterialModule,

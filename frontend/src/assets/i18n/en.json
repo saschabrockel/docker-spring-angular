@@ -1,4 +1,8 @@
 {
+  "HEADER": {
+    "USER": "Users",
+    "STARTPAGE": "Docker with Angular & Spring Boot"
+  },
   "USER": {
     "USERNAME": "Username",
     "EMAIL": "E-Mail",
