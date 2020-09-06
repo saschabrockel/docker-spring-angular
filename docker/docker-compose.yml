@@ -4,7 +4,7 @@ services:
     container_name: angular
     ports:
       - 80:80
-    image: cptdaydreamer/docker-spring-angular:frontend
+    image: saschabrockel/docker-spring-angular:frontend
     restart: unless-stopped
     environment:
       API_URL: http://localhost:8080
@@ -16,7 +16,7 @@ services:
     container_name: spring-boot
     ports:
       - 8080:8080
-    image: cptdaydreamer/docker-spring-angular:backend
+    image: saschabrockel/docker-spring-angular:backend
     environment:
       spring.datasource.url: jdbc:mysql://db:3306/dockerSpringAngular
       spring.datasource.username: brockel
