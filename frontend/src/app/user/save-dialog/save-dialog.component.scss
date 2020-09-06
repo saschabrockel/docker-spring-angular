@@ -1,0 +1,11 @@
+.form-field-full-width {
+  width: 100%;
+}
+
+mat-error {
+  display: none;
+}
+
+mat-form-field mat-error:first-child {
+  display: block;
+}

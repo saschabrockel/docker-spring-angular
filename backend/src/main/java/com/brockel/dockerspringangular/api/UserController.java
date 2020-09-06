@@ -1,5 +1,6 @@
 package com.brockel.dockerspringangular.api;
 
+import com.brockel.dockerspringangular.dto.MessageResponse;
 import com.brockel.dockerspringangular.dto.UserRequest;
 import com.brockel.dockerspringangular.model.User;
 import com.brockel.dockerspringangular.service.UserService;
@@ -15,6 +16,7 @@ import javax.validation.Valid;
 
 @RestController
 @Slf4j
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/user")
 public class UserController {
 
@@ -38,8 +40,8 @@ public class UserController {
     user.setEmail(userRequest.getEmail().toLowerCase());
 
     userService.save(user);
-    log.info("Created User {}" + user);
-    return ResponseEntity.ok("Created user");
+    log.info("Created {}", user);
+    return ResponseEntity.ok(new MessageResponse("Created user"));
   }
 
   @GetMapping("/get-all")

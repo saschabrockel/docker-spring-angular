@@ -1,13 +1,16 @@
 package com.brockel.dockerspringangular.model;
 
+import com.brockel.dockerspringangular.util.UserListener;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Data
+@EntityListeners(UserListener.class)
 @NoArgsConstructor
 @Accessors(chain = true)
 @Table(
@@ -26,4 +29,7 @@ public class User {
 
   @Column(nullable = false)
   private String username;
+
+  @Column(nullable = false)
+  private Date created;
 }

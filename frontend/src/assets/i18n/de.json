@@ -1,11 +1,45 @@
 {
   "HEADER": {
-    "USER": "Benutzer",
-    "STARTPAGE": "Docker mit Angular & Spring Boot"
+    "USER": "Benutzerübersicht",
+    "STARTPAGE": "Docker mit Spring Boot & Angular",
+    "TOOLTIP": {
+      "GITHUB": "Projekt GitHub-Repository",
+      "BLOG": "Projekt Blogartikel",
+      "STARTPAGE": "Startseite"
+    }
   },
   "USER": {
     "USERNAME": "Benutzername",
     "EMAIL": "E-Mail",
-    "DATE_OF_CREATION": "Erstellungsdatum"
+    "DATE_OF_CREATION": "Erstellungsdatum",
+    "SAVE_DIALOG": {
+      "SAVE": "Speichern",
+      "ABORT": "Abbrechen",
+      "EMAIL": "E-Mail",
+      "USERNAME": "Benutzername",
+      "HINT": "Vergib dem Benutzer einen Benutzernamen und eine E-Mail",
+      "TITLE": "Benutzer speichern"
+    },
+    "CREATE": "Benutzer anlegen",
+    "TITLE": "Benutzerübersicht",
+    "HINT": "Aktuell existieren noch keine Benutzer. Erstelle einen, um eine Übersicht zu erhalten."
+  },
+  "SNACKBAR": {
+    "ABORTED": "Abgebrochen",
+    "CLOSE": "Schließen",
+    "SAVE_SUCCESS": "Erfolgreich gespeichert!",
+    "ERROR": "Ein Fehler ist aufgetreten."
+  },
+  "VALIDATION": {
+    "REQUIRED": "ist erforderlich",
+    "MINLENGTH": "Mindestens erforderliche Zeichen: ",
+    "MAXLENGTH": "Erlaubte Länge an Zeichen: ",
+    "EMAIL": "Keine korrekte E-Mail"
+  },
+  "APP": {
+    "TITLE": "Beispielprojekt zur Verknüpfung von Angular & Spring Boot in Docker",
+    "EXPLAINATION_1": "Das Projekt dient lediglich dazu die Funktion zwischen Spring Boot & Angular in Docker darzustellen.",
+    "EXPLAINATION_2": "Daher sieht es nicht besonders schön aus, aber erfüllt den Zweck.",
+    "EXPLAINATION_3": "In der Titelleiste findest du Zugriff auf den Blogartikel, das GitHub-Repository und eine Möglichkeit zum Ändern der Sprache."
   }
 }

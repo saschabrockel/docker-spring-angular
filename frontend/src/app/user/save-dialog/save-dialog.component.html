@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>{{ 'USER.SAVE_DIALOG.TITLE' | translate }}</h1>
+<form [formGroup]="saveForm" (submit)="saveForm">
+  <div mat-dialog-content>
+    <p>{{ 'USER.SAVE_DIALOG.HINT' | translate }}</p>
+
+    <mat-form-field class="form-field-full-width">
+      <input matInput #username required formControlName="username"
+        placeholder="{{ 'USER.SAVE_DIALOG.USERNAME' | translate }}" type="text">
+      <mat-hint align="end" aria-live="polite">
+        {{username.value.length}} / 255
+      </mat-hint>
+      <mat-error *ngIf="f.username.touched && f.username.errors && f.username.errors.required">
+        {{ 'USER.SAVE_DIALOG.USERNAME' | translate }} {{ 'VALIDATION.REQUIRED' | translate }}
+      </mat-error>
+      <mat-error *ngIf="f.username.touched && f.username.errors && f.username.errors.minlength">
+        {{ 'VALIDATION.MINLENGTH' | translate }} 3
+      </mat-error>
+      <mat-error *ngIf="f.username.touched && f.username.errors && f.username.errors.maxlength">
+        {{ 'VALIDATION.MAXLENGTH' | translate }} 255
+      </mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field class="form-field-full-width">
+      <input matInput #email required formControlName="email" placeholder="{{ 'USER.SAVE_DIALOG.EMAIL' | translate }}"
+        type="text">
+      <mat-hint align="end" aria-live="polite">
+        {{email.value.length}} / 70
+      </mat-hint>
+      <mat-error *ngIf="f.email.touched && f.email.errors && f.email.errors.required">
+        {{ 'USER.SAVE_DIALOG.EMAIL' | translate }} {{ 'VALIDATION.REQUIRED' | translate }}
+      </mat-error>
+      <mat-error *ngIf="f.email.touched && f.email.errors && f.email.errors.maxlength">
+        {{ 'VALIDATION.MAXLENGTH' | translate }} 70
+      </mat-error>
+      <mat-error *ngIf="f.email.touched && f.email.errors && f.email.errors.email">
+        {{ 'VALIDATION.EMAIL' | translate }}
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div mat-dialog-actions>
+    <button mat-raised-button type="submit" color="primary" [disabled]="saveForm.invalid"
+      [mat-dialog-close]="saveForm.value">{{ 'USER.SAVE_DIALOG.SAVE' | translate }}</button>
+    <button mat-raised-button type="button" color="warn"
+      (click)="onAbortClick()">{{ 'USER.SAVE_DIALOG.ABORT' | translate }}</button>
+  </div>
+
+</form>

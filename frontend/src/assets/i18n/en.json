@@ -1,11 +1,45 @@
 {
   "HEADER": {
-    "USER": "Users",
-    "STARTPAGE": "Docker with Angular & Spring Boot"
+    "USER": "User overview",
+    "STARTPAGE": "Docker with Spring Boot & Angular",
+    "TOOLTIP": {
+      "GITHUB": "Project GitHub-Repository",
+      "BLOG": "Projekt blog article",
+      "STARTPAGE": "Startpage"
+    }
   },
   "USER": {
     "USERNAME": "Username",
     "EMAIL": "E-Mail",
-    "DATE_OF_CREATION": "Date of creation"
+    "DATE_OF_CREATION": "Date of creation",
+    "SAVE_DIALOG": {
+      "SAVE": "Sav",
+      "ABORT": "Abort",
+      "EMAIL": "E-Mail",
+      "USERNAME": "Username",
+      "HINT": "Assign the user a username and an email",
+      "TITLE": "Save User"
+    },
+    "CREATE": "Create user",
+    "TITLE": "User overview",
+    "HINT": "There are currently no users. Create one to get an overview."
+  },
+  "SNACKBAR": {
+    "ABORTED": "Aborted",
+    "CLOSE": "Close",
+    "SAVE_SUCCESS": "Saved successfully!",
+    "ERROR": "An error occurred."
+  },
+  "VALIDATION": {
+    "REQUIRED": "is required",
+    "MINLENGTH": "Required characters: ",
+    "MAXLENGTH": "Maximal characters: ",
+    "EMAIL": "E-Mail is not valid"
+  },
+  "APP": {
+    "TITLE": "Sample project for linking Angular & Spring Boot in Docker",
+    "EXPLAINATION_1": "The project only serves to represent the function between Spring Boot & Angular in Docker.",
+    "EXPLAINATION_2": "So it doesn't look particularly nice, but it does the job.",
+    "EXPLAINATION_3": "In the title bar you will find access to the blog article, the GitHub repository and a way to change the language."
   }
 }

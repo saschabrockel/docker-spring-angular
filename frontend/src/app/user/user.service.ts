@@ -24,7 +24,7 @@ export class UserService {
    * @param username The username for the user.
    * @param email The email for the user.
    */
-  saveModel(username: string, email: string): Observable<any> {
+  saveUser(username: string, email: string): Observable<any> {
     return this.http.post<any>(
       SAVE_USER_API,
       {
@@ -38,7 +38,7 @@ export class UserService {
   /**
    * Sends a request to the backend. Gets all users.
    */
-  getAllActivationFunctions(): Observable<any> {
+  getAllUsers(): Observable<any> {
     return this.http.get<any>(GET_ALL_USER_API, this.httpOptions);
   }
 }

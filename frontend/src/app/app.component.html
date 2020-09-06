@@ -1,5 +1,15 @@
 <app-header></app-header>
 
+<div *ngIf="router.url === '/'">
+    <h1 class="title">{{ 'APP.TITLE' | translate }}</h1>
+    <div class="container" style="text-align: center; font-size: 22px;">
+        <p>{{ 'APP.EXPLAINATION_1' | translate }}</p>
+        <p>{{ 'APP.EXPLAINATION_2' | translate }}</p>
+        <p>{{ 'APP.EXPLAINATION_3' | translate }}</p>
+    </div>
 
+</div>
 
-<router-outlet></router-outlet>
+<div class="container">
+    <router-outlet></router-outlet>
+</div>

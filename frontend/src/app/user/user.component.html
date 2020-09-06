@@ -1,32 +1,34 @@
-<p>user works!</p>
+<div class="title">
+    <h1>{{ 'USER.TITLE' | translate }}</h1>
+</div>
 
-<div class="mat-elevation-z8">
+<p class="hint" *ngIf="dataInitialized && this.dataSource.data.length === 0">{{ 'USER.HINT' | translate }}</p>
 
-    <table mat-table matSort [dataSource]="dataSource" multiTemplateDataRows>
-        <!-- <table mat-table matSort [dataSource]="dataSource" multiTemplateDataRows
-        *ngIf="dataInitialized && this.dataSource.data.length > 0"> -->
+<div class="mat-elevation-z8" *ngIf="dataInitialized && this.dataSource.data.length > 0">
+
+    <table mat-table [dataSource]="dataSource">
 
         <!-- Username Column -->
         <ng-container matColumnDef="username">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef>
-                {{ 'USER.NAME' | translate }}
+            <th mat-header-cell *matHeaderCellDef>
+                {{ 'USER.USERNAME' | translate }}
             </th>
-            <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.username }}</td>
         </ng-container>
 
         <!-- Email Column -->
         <ng-container matColumnDef="email">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef>
+            <th mat-header-cell *matHeaderCellDef>
                 {{ 'USER.EMAIL' | translate }}</th>
-            <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+            <td mat-cell *matCellDef="let element">{{ element.email }}</td>
         </ng-container>
 
         <!-- Date of Creation Column -->
-        <ng-container matColumnDef="lastUpdated">
-            <th mat-header-cell mat-sort-header *matHeaderCellDef>
+        <ng-container matColumnDef="created">
+            <th mat-header-cell *matHeaderCellDef>
                 {{ 'USER.DATE_OF_CREATION' | translate }}</th>
             <td mat-cell *matCellDef="let element">
-                {{ element.lastUpdated | date: 'medium' : '' : translate.currentLang }}</td>
+                {{ element.created | date: 'medium' : '' : translate.currentLang }}</td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
@@ -34,3 +36,8 @@
     </table>
 
 </div>
+
+<br>
+
+<!-- Create User -->
+<button mat-raised-button color="accent" type="button" (click)="onSaveUser()">{{ "USER.CREATE" | translate }}</button>
