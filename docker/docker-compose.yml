@@ -1,0 +1,49 @@
+version: "3"
+services:
+  angular:
+    container_name: angular
+    ports:
+      - 80:80
+    image: cptdaydreamer/docker-spring-angular:frontend
+    restart: unless-stopped
+    environment:
+      API_URL: http://localhost:8080
+      TZ: Europe/Berlin
+    networks:
+      - docker-spring-angular
+
+  spring-boot:
+    container_name: spring-boot
+    ports:
+      - 8080:8080
+    image: cptdaydreamer/docker-spring-angular:backend
+    environment:
+      spring.datasource.url: jdbc:mysql://db:3306/dockerSpringAngular
+      spring.datasource.username: brockel
+      spring.datasource.password: develop
+      angular.service.base-path: http://localhost
+      TZ: Europe/Berlin
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - docker-spring-angular
+
+  db:
+    container_name: db
+    image: mysql:8.0.21
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dockerSpringAngular
+      MYSQL_USER: brockel
+      MYSQL_PASSWORD: develop
+    ports:
+      - 3306:3306
+    restart: unless-stopped
+    cap_add:
+      - SYS_NICE
+    networks:
+      - docker-spring-angular
+
+networks:
+  docker-spring-angular:
