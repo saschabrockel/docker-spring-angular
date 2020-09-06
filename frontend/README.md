@@ -1,4 +1,4 @@
-English | [Deutsch](/README-DE.md)
+English | [Deutsch](/frontend/README-DE.md)
 
 # Docker-Spring-Angular
 
